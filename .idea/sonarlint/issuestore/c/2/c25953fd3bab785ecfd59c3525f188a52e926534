@@ -1,0 +1,14 @@
+
+Ljavascript:S1128")Remove this unused import of 'useEffect'.(ğê¯­8ÄßÀ‚3
+ljavascript:S3358"DExtract this nested ternary operation into an independent statement.(âÒœùÿÿÿÿ8ÅßÀ‚3
+æjavascript:S6848c"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(€é†8ÅßÀ‚3
+‚javascript:S1082c"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(€é†8ÆßÀ‚3
+ujavascript:S6847e"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Æœ¢Ã8ÆßÀ‚3
+æjavascript:S6848q"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(ÍÔ˜½8ÇßÀ‚3
+‚javascript:S1082q"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(ÍÔ˜½8ÇßÀ‚3
+æjavascript:S6848u"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(ÀÕÃó8ÈßÀ‚3
+‚javascript:S1082u"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(ÀÕÃó8ÈßÀ‚3
+æjavascript:S6848y"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(ûîÉ²8ÉßÀ‚3
+‚javascript:S1082y"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(ûîÉ²8ÉßÀ‚3
+ëjavascript:S6848}"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(–Êóúÿÿÿÿ8ÊßÀ‚3
+‡javascript:S1082}"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(–Êóúÿÿÿÿ8ÊßÀ‚3

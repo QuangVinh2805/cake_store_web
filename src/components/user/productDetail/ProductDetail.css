@@ -1,0 +1,486 @@
+.product-detail-content {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.product-detail-main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.image-section {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    width: 100%;
+    height: 80%;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.thumbnail.active {
+    border-color: #fe6a84;
+}
+
+.info-section {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.price {
+    font-size: 28px;
+    color: #fe6a84;
+    margin: 10px 0;
+}
+/*.co-button{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    gap: 10px;*/
+/*}*/
+
+.buy-button,
+.atcart-button {
+    background-color: #fe6a84;
+    color: white;
+    border: 1px solid #FE6A84;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 12px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover,
+.atcart-button:hover {
+    background-color: white;
+    color: #fe6a84;
+    border: 1px solid #fe6a84;
+}
+
+.taste-selector {
+    margin: 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.taste-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background-color: white;
+    border: 1.5px solid #ddd;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.taste-button::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.taste-button.active {
+    background-color: #fe6a84;
+    color: white;
+    border-color: #fe6a84;
+}
+
+.taste-text{
+    margin-top: 5px;
+}
+.taste-button.active::before {
+    background-color: white;
+}
+
+.quantity-section {
+    margin: 20px 0;
+}
+
+.quantity-control-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.quantity-control-product button {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    background: #fe6a84;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.quantity-control-product button:hover {
+    background-color: #fe6a84;
+    color: #fff;
+}
+
+.quantity-control-product span {
+    font-size: 16px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.description-2 {
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    width: 72%;
+    margin:auto;
+}
+
+.related-products {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.related-products h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #333;
+    margin-left: 20px;
+}
+
+.related-products .product-detail-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    margin: 0 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.related-products .product-detail-card:hover {
+    transform: translateY(-6px);
+}
+
+.related-products .product-detail-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.related-products .product-detail-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    color: #222;
+}
+
+.related-products .product-detail-card .price {
+    font-size: 15px;
+    color: #fe6a84;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.related-products .slick-prev,
+.related-products .slick-next {
+    z-index: 2;
+}
+
+.related-products .slick-prev:before,
+.related-products .slick-next:before {
+    font-size: 28px;
+    color: #fe6a84;
+}
+
+.review-section {
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 900px;
+}
+
+.review-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #fff0f3;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.review-score {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fe6a84;
+}
+
+.review-count {
+    color: #666;
+    display: block;
+    margin-top: 4px;
+}
+
+.review-list {
+    margin-bottom: 30px;
+}
+
+.review-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.review-content {
+    flex: 1;
+}
+
+.review-header {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.review-content p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.review-form button {
+    background-color: #fe6a84;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.review-form button:hover {
+    background-color: #ffffff;
+    color: #FE6A84;
+    border: 1px solid #FE6A84;
+}
+
+.heart-icons {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.heart-pink {
+    color: #fe6a84;
+}
+@media (max-width: 768px) {
+    .product-detail-main {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .related-products h2 {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 30px;
+        margin-left:0;
+    }
+
+    .product-detail-card {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .product-detail-card img {
+        max-height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .product-detail-card h3 {
+        font-size: 16px;
+        margin: 10px 0 5px;
+    }
+
+    .product-detail-card .price {
+        font-size: 14px;
+        color: #fe6a84;
+        font-weight: bold;
+    }
+
+    .product-detail-content {
+        flex-direction: column;
+    }
+    .related-products .slick-prev,
+    .related-products .slick-next {
+        display: none !important;
+    }
+
+    .image-section, .info-section {
+        width: 100%;
+    }
+
+    .main-image {
+        height: auto;
+        object-fit: cover;
+    }
+
+    .thumbnail-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    .taste-selector {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .co-button {
+        display: flex;
+        justify-content:space-between;
+        flex-direction: row;
+    }
+
+    .atcart-button, .buy-button {
+        width: 48%;
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .review-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .review-form textarea {
+        width: 100%;
+    }
+    .related-products {
+        padding: 0 10px;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .related-products .slick-list {
+        overflow: hidden;
+    }
+
+    .related-products .slick-track {
+        display: flex !important;
+    }
+
+    .related-products .slick-slide {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .product-detail-card {
+        width: 100% !important;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .description-2{
+        width: 92%;
+    }
+
+    .quantity-section{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .quantity-control-product{
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .info-section{
+        padding-top: 0;
+    }
+
+    .related-products .product-detail-card{
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 770px) and (max-width: 1200px){
+    .description-2{
+        width: 93%;
+    }
+}
+@media (min-width: 1200px) and (max-width:1521px ){
+    .description-2{
+        width: 75%;
+    }
+}
+
+

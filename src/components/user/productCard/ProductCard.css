@@ -1,0 +1,231 @@
+.product-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.product-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #FE6A84;
+}
+
+/* ----- IMAGE + ICON ----- */
+.product-image-container {
+    position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Icon tim góc phải */
+.heart-icon-button {
+    width:40px;
+    height: 40px;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.4rem;
+    /*border: none;*/
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #FE6A84;
+}
+
+.heart-icon-button:hover {
+    background-color: #FE6A84;
+}
+
+.heart-icon {
+    color: #FE6A84;
+    width: 27px;
+    height: 27px;
+    margin: auto;
+}
+
+.heart-icon-button:hover .heart-icon {
+    color: #fff;
+}
+
+/* ----- TAG ----- */
+.product-tags {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.product-tag {
+    background-color: #FE6A84;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+}
+
+/* ----- NAME + PRICE ----- */
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fe6a84;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    color: #FE6A84;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* ----- ACTION BUTTON ----- */
+.product-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.add-to-cart-button {
+    background-color: #FE6A84;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+    background-color: #ffffff;
+    color: #FE6A84;
+    border: 1px solid #FE6A84;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .product-card {
+        padding: 0.5rem;
+    }
+
+    .heart-icon-button {
+        top: 0.4rem;
+        right: 0.4rem;
+        padding: 0.3rem;
+    }
+
+    .heart-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .add-to-cart-button {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+@media (min-width: 1121px) and (max-width: 1354px) {
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        min-height: 400px; /* đảm bảo cao đồng đều */
+    }
+
+    /* Đảm bảo phần text (tên, giá, nút) căn thẳng hàng */
+    .product-name {
+        min-height: 50px; /* giữ chiều cao cố định để căn đều */
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+    }
+
+    .product-price {
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .product-actions {
+        margin-top: auto; /* đẩy nút xuống cùng */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .add-to-cart-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1354px){
+    /*.products-grid {*/
+    /*    grid-template-columns: repeat(3, minmax(200px, 1fr)); !* lg:grid-cols-4 *!*/
+    /*}*/
+    .product-name{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1005px){
+    .product-name{
+        font-size: 16px;
+    }
+
+    .product-price{
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 1005px){
+    .product-name{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .product-card{
+        width: 180px;
+    }
+}
+
+@media (max-width: 440px) {
+    .product-card{
+        width: 150px;
+    }
+}
+
+@media (max-width: 360px) {
+    .product-card{
+        width: 135px;
+    }
+}
+

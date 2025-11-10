@@ -1,0 +1,128 @@
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.checkout-left,
+.checkout-right {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-left {
+    flex: 2;
+    min-width: 300px;
+}
+
+.checkout-right {
+    flex: 1.2;
+    min-width: 250px;
+}
+
+.checkout-left h2,
+.checkout-right h3 {
+    color: #fe6a84;
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+
+.checkout-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+    border-color: #fe6a84;
+    outline: none;
+}
+
+.checkout-submit {
+    margin-top: 25px;
+    width: 100%;
+    background-color: #fe6a84;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checkout-submit:hover {
+    background-color: #ff4a6a;
+}
+
+/* Đơn hàng */
+.checkout-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.checkout-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+}
+
+.item-name {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.item-quantity,
+.item-price {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.checkout-summary {
+    margin-top: 20px;
+    text-align: right;
+    color: #fe6a84;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .checkout-left,
+    .checkout-right {
+        width: 100%;
+    }
+
+    .checkout-summary {
+        text-align: center;
+    }
+}

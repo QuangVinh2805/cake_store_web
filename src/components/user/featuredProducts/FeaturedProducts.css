@@ -1,0 +1,247 @@
+
+.section-title-product{
+    font-size: 40px;
+    color: #fe6a84;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem; /* mb-10 */
+    gap: 1rem; /* space-x-4 */
+    overflow-x: auto; /* overflow-x-auto */
+    padding-bottom: 1rem; /* pb-4 */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+@media (min-width: 768px) { /* md */
+    .tabs-container {
+        gap: 2rem; /* md:space-x-8 */
+    }
+}
+
+.featured-button {
+    padding: 0.75rem 1.5rem; /* px-6 py-3 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    border: 1px solid #fe6a84;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent buttons from shrinking on small screens */
+    color: #FE6A84;
+    margin-top: 30px;
+}
+
+.featured-button:hover {
+    background-color: #FE6A84; /* bg-pink-600 */
+    color: #ffffff; /* text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+}
+
+/*@media (min-width: 640px) and (ma){ !* sm *!*/
+/*    .products-grid {*/
+/*        grid-template-columns: repeat(2, minmax(0, 1fr)); !* sm:grid-cols-2 *!*/
+/*    }*/
+/*}*/
+
+@media (min-width: 768px) { /* md */
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+    }
+}
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1354px) { /* lg */
+    .products-grid {
+        grid-template-columns: repeat(4, minmax(200px, 1fr)); /* lg:grid-cols-4 */
+    }
+}
+
+@media (max-width: 1354px){
+    /*.products-grid {*/
+    /*    grid-template-columns: repeat(3, minmax(200px, 1fr)); !* lg:grid-cols-4 *!*/
+    /*}*/
+}
+
+/*@media (max-width: 1005px){*/
+/*    .products-grid {*/
+/*        grid-template-columns: repeat(2, minmax(150px, 1fr)); !* lg:grid-cols-4 *!*/
+/*    }*/
+/*}*/
+
+.view-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem; /* mt-12 */
+}
+
+.view-all-button {
+    background-image: linear-gradient(to top, #FFD3DB, #f43f5e); /* bg-gradient-to-r from-pink-500 to-rose-600 */
+    color: #ffffff; /* text-white */
+    padding: 1rem 2rem; /* px-8 py-4 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+    transform: translateY(0); /* transform hover:-translate-y-1 reset */
+    border: none;
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    background-image: linear-gradient(to top, #d43b86, #e02a48); /* hover:from-pink-600 hover:to-rose-700 */
+    transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+}
+@media (max-width: 768px) {
+    .section-title-product {
+        font-size: 1.75rem; /* 28px */
+        margin-top: 2rem;
+    }
+
+    .featured-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .view-all-button {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
+@media (max-width: 480px) {
+    .section-title-product {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .tabs-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .featured-button {
+        width: 80%;
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr)); /* Giới hạn độ rộng mỗi card */
+        justify-content: center; /* Căn giữa grid trong container */
+        justify-items: center; /* Căn giữa từng card trong grid */
+        align-items: start;
+        gap: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0.75rem;
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 220px; /* Giới hạn chiều rộng card */
+    }
+
+    .view-all-button {
+        font-size: 0.95rem;
+        padding: 0.75rem 1.25rem;
+    }
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Giới hạn chiều cao và xử lý chữ dài */
+    .product-name {
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        min-height: 2.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        margin: 0.5rem 0 0.25rem;
+    }
+
+    .product-price {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #555;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Actions hàng dưới cùng */
+    .product-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: auto;
+        gap: 0.5rem;
+    }
+
+    /* Nút trái tim */
+    .product-icon-button {
+        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Icon Heart có size cố định */
+    .product-icon-button .icon-svg {
+        width: 20px;
+        height: 20px;
+        stroke: #FE6A84;
+    }
+
+    /* Nút thêm vào giỏ chiếm phần còn lại */
+    .add-to-cart-button {
+        flex-grow: 1;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        background-color: #FE6A84;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        text-align: center;
+    }
+    .add-to-cart-button:active{
+        background-color: #ffffff;
+        color: #FE6A84;
+    }
+
+}

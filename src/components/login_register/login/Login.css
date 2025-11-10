@@ -1,0 +1,153 @@
+/* Toàn bộ khung */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.logo-login{
+    font-size: 70px;
+    font-family: "Freestyle Script";
+    color: #fe6a84;
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Form login */
+.login-form {
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 550px;
+}
+
+/* Tiêu đề */
+.login-form h2 {
+    text-align: center;
+    color: #fe6a84;
+    margin-bottom: 24px;
+}
+
+/* Label và Input */
+.login-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    font-size: 15px;
+}
+
+.login-form input:focus {
+    border-color: #fe6a84;
+    outline: none;
+}
+.button-submit {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Cố định chiều rộng nút */
+.button-login {
+    flex: 1;
+    height: 50px;
+    background-color: #FE6A84;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    max-width: 550px;
+    width: 100%;
+}
+
+/* Hiệu ứng hover */
+.button-register:hover {
+    background-color: #ffffff;
+    color: #FE6A84;
+    border: 1px solid #FE6A84;
+}
+.register-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #fe6a84;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Đặt các ảnh deco trên 1 hàng và canh giữa */
+.deco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.deco img {
+    width: 50px; /* hoặc tuỳ ý */
+    height: 50px;
+    object-fit: contain;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 22px;
+    }
+
+    .login-form input,
+    .login-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .deco {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .deco img {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}

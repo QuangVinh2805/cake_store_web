@@ -1,0 +1,83 @@
+/* src/styles/QualityAssurance.css */
+.quality-assurance-section {
+    padding-top: 4rem; /* py-16 */
+    padding-bottom: 4rem; /* py-16 */
+    background-color: #ffffff; /* bg-white */
+}
+.section-title-qa{
+    font-size: 40px;
+    color: #FE6A84;
+}
+
+
+@media (min-width: 768px) { /* md */
+    .quality-assurance-section {
+        padding-top: 5rem; /* md:py-20 */
+        padding-bottom: 5rem; /* md:py-20 */
+    }
+}
+
+.quality-logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decorative-circles-grid {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* grid-cols-3 */
+    gap: 2rem; /* gap-8 */
+    width: 100%; /* Adjust as needed */
+    max-width: 300px; /* Example max-width */
+}
+
+@media (min-width: 768px) { /* md */
+    .decorative-circles-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)); /* md:grid-cols-5 */
+        max-width: 500px; /* Adjust for larger screens */
+    }
+}
+
+.circle {
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md/lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quality-logo {
+    position: relative;
+    z-index: 10;
+    width: 12rem; /* w-48 */
+    height: 12rem; /* h-48 */
+    border-radius: 9999px; /* rounded-full */
+    border: 4px solid #ffffff; /* border-4 border-white */
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) { /* md */
+    .quality-logo {
+        width: 16rem; /* md:w-64 */
+        height: 16rem; /* md:h-64 */
+    }
+}
+
+.quality-description {
+    margin-top: 3rem; /* mt-12 */
+    font-size: 1.125rem; /* text-lg */
+    color: #4a5568; /* gray-700 */
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quality-slogan {
+    margin-top: 2rem; /* mt-8 */
+    color: #db2777; /* text-pink-600 */
+    font-weight: 600; /* font-semibold */
+    font-size: 1.25rem; /* text-xl */
+}

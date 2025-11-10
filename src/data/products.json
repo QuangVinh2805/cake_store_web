@@ -1,0 +1,66 @@
+
+[
+  {
+    "id": 1,
+    "name": "Bánh quy hạnh nhân",
+    "price": "35.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": "-20%"
+  },
+  {
+    "id": 2,
+    "name": "Bánh flan",
+    "price": "30.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": "Mới"
+  },
+  {
+    "id": 3,
+    "name": "Bánh chuối",
+    "price": "32.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  },
+  {
+    "id": 4,
+    "name": "Bánh Donut",
+    "price": "25.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  },
+  {
+    "id": 5,
+    "name": "Bánh kem dâu",
+    "price": "50.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": "Mới"
+  },
+  {
+    "id": 6,
+    "name": "Bánh bông lan trứng muối",
+    "price": "45.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  },
+  {
+    "id": 7,
+    "name": "Bánh mochi",
+    "price": "28.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  },
+  {
+    "id": 8,
+    "name": "Bánh cupcake",
+    "price": "30.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  },
+  {
+    "id": 9,
+    "name": "Bánh cupcake mini",
+    "price": "20.000đ",
+    "image": "https://via.placeholder.com/150",
+    "badge": null
+  }
+]

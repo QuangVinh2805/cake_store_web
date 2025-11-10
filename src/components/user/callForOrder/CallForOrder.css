@@ -1,0 +1,114 @@
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; /* gap-12 */
+    width: 80%;
+    margin: auto;
+}
+
+@media (min-width: 768px) { /* md */
+    .cta-content {
+        flex-direction: row;
+    }
+}
+
+.cta-images {
+    display: flex;
+    flex-direction: column; /* flex-col */
+    gap: 2rem; /* gap-8 */
+    justify-content: center;
+}
+
+@media (min-width: 640px) { /* sm */
+    .cta-images {
+        flex-direction: row; /* sm:flex-row */
+    }
+}
+
+@media (min-width: 768px) { /* md */
+    .cta-images {
+        width: 50%; /* md:w-1/2 */
+    }
+}
+
+.cta-image {
+    border-radius: 0.75rem; /* rounded-xl */
+    width: 100%; /* w-full */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* transition duration-300 */
+}
+
+@media (min-width: 640px) { /* sm */
+    .cta-image {
+        width: 50%; /* sm:w-1/2 */
+    }
+}
+
+.cta-image:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.cta-image-2 {
+    margin-top: 0; /* mt-0 */
+}
+
+@media (min-width: 640px) { /* sm */
+    .cta-image-2 {
+        margin-top: 3rem; /* sm:mt-12 */
+    }
+}
+
+.cta-text-container {
+    text-align: center;
+}
+
+@media (min-width: 768px) { /* md */
+    .cta-text-container {
+        width: 50%; /* md:w-1/2 */
+        text-align: left;
+    }
+}
+
+.cta-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    color: #FE6A84; /* gray-900 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    line-height: 1.25; /* leading-tight */
+}
+
+.cta-description {
+    font-size: 1.125rem; /* text-lg */
+    color: #5a5a5a; /* gray-700 */
+    margin-bottom: 2rem; /* mb-8 */
+    max-width: 32rem; /* max-w-lg */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) { /* md */
+    .cta-description {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.cta-button {
+    background-image: linear-gradient(to top, #FFD3DB, #f43f5e);  /* bg-gradient-to-r from-pink-500 to-rose-600 */
+    color: #ffffff; /* text-white */
+    padding: 1rem 2rem; /* px-8 py-4 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    transform: translateY(0); /* transform hover:-translate-y-1 reset */
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-image: linear-gradient(to right, #d43b86, #e02a48); /* hover:from-pink-600 hover:to-rose-700 */
+    transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+}

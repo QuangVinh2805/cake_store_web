@@ -1,0 +1,240 @@
+/* Contact Bar */
+.contact-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    border-bottom: 2px solid #FE6A84;
+    font-size: 14px;
+    color: #333;
+    flex-wrap: wrap;
+}
+.user-section {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 170px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    margin-top:10px;
+}
+
+.user-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.user-dropdown.hide {
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+}
+
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #f7f7f7;
+}
+
+.dropdown-icon {
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: transform 0.2s;
+    margin-left: 5px;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+}
+
+
+
+.contact-left {
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-bar .contact-left span {
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+    color: #666;
+    white-space: nowrap;
+}
+
+.contact-bar svg {
+    color: #FE6A84;
+    margin-right: 5px;
+}
+
+.contact-right {
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.order-btn {
+    background-color: #FE6A84;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.order-btn:hover {
+    background-color: #ffffff;
+    color: #FE6A84;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+    /*margin: auto;*/
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet (width < 1200px) */
+@media screen and (max-width: 1199px) {
+    .contact-bar {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .contact-left {
+        margin-left: 20px;
+    }
+
+    .contact-right {
+        margin-right: 20px;
+    }
+
+    .order-btn {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+
+    .cart-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Mobile (width < 768px) */
+@media screen and (max-width: 767px) {
+    .contact-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px 16px;
+    }
+
+
+    .contact-left {
+        margin: 0;
+    }
+
+    .contact-left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-left span {
+        margin: 4px 0;
+    }
+
+    .contact-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .order-btn {
+        padding: 6px 14px;
+        font-size: 14px;
+        width: auto;
+    }
+
+    .cart-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+@media(max-width: 416px){
+    .contact-left{
+        display: flex;
+        align-items: center;
+        margin: auto auto 10px;
+    }
+    .contact-left span {
+        margin-left: 20px;
+    }
+
+    .contact-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin:auto;
+    }
+}
+
+
+

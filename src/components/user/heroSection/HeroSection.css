@@ -1,0 +1,238 @@
+.slide-1 {
+    display: flex;
+    align-items: center;
+    height: 440px;
+    background: linear-gradient(to bottom, #FF4F6E 0%, #FFD3DC 100%);
+    border-radius: 20px;
+}
+
+.cake-image {
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+}
+.cake-right{
+    margin-left: 50px;
+}
+
+.cake-name{
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 70px;
+}
+.cake-title{
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 70px;
+}
+.cake-des{
+    color: #ffffff;
+    font-size: 16px;
+}
+.cake-slide-order-1{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #FF4F6E;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-1:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-2{
+    background: linear-gradient(to bottom, #A1B8D6 0%, #E5EDF5 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-2{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #A1B8D6;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-2:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-3{
+    background: linear-gradient(to bottom, #98684B 0%, #E8D6C9 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-3{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #98684B;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-3:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-4{
+    background: linear-gradient(to bottom, #FBCC7A 0%, #FFF4D7 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-4{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #FBCC7A;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-4:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-5{
+    background: linear-gradient(to bottom, #CC91A9 0%, #F6E5EC 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-5{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #CC91A9;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-5:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-6{
+    background: linear-gradient(to bottom, #EE3C4A 0%, #FAD2D5 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-6{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #EE3C4A;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-6:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.slide-7{
+    background: linear-gradient(to bottom, #53A051 0%, #D9EAD3 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 440px;
+}
+.cake-slide-order-7{
+    width: 170px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #53A051;
+    border-radius: 24px;
+    margin-top: 30px;
+}
+.cake-slide-order-7:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1024px) {
+    .cake-right {
+        margin-left: 30px;
+    }
+
+    .cake-title {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .cake-des,
+    .cake-name {
+        font-size: 14px;
+    }
+
+    .cake-slide-order-1,
+    .cake-slide-order-2,
+    .cake-slide-order-3,
+    .cake-slide-order-4,
+    .cake-slide-order-5,
+    .cake-slide-order-6,
+    .cake-slide-order-7 {
+        width: 140px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slide-1,
+    .slide-2,
+    .slide-3,
+    .slide-4,
+    .slide-5,
+    .slide-6,
+    .slide-7 {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .cake-image {
+        width: 100%;
+        height: auto;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .cake-right {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .cake-title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .cake-des,
+    .cake-name {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .cake-slide-order-1,
+    .cake-slide-order-2,
+    .cake-slide-order-3,
+    .cake-slide-order-4,
+    .cake-slide-order-5,
+    .cake-slide-order-6,
+    .cake-slide-order-7 {
+        width: 100%;
+        max-width: 240px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .dots-container {
+        margin-top: 10px;
+    }
+}

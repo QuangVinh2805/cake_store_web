@@ -1,0 +1,120 @@
+.section-title-testi{
+    font-size: 40px;
+    color: #fe6a84;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) { /* md */
+    .testimonials-section {
+        padding-top: 5rem; /* md:py-20 */
+        padding-bottom: 5rem; /* md:py-20 */
+    }
+}
+
+.testimonial-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 10;
+    padding: 0.75rem; /* p-3 */
+    background-color: #ffffff; /* bg-white */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition: background-color 0.2s ease-in-out; /* transition duration-200 */
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1; /* Adjust to center the arrow text */
+}
+
+.carousel-button-left {
+    left: 0;
+}
+
+.carousel-button-right {
+    right: 0;
+}
+
+.carousel-button-left:hover{
+    background-color: #ffffff;
+    color: #FE6A84;
+}
+.carousel-button-right:hover{
+    background-color: #ffffff;
+    color: #FE6A84;
+}
+
+@media (min-width: 768px) { /* md */
+    .carousel-button-left {
+        left: 1rem; /* md:left-4 */
+    }
+    .carousel-button-right {
+        right: 1rem; /* md:right-4 */
+    }
+    .carousel-button-left:hover{
+        background-color: #ffffff;
+        color: #FE6A84;
+    }
+    .carousel-button-right:hover{
+        background-color: #ffffff;
+        color: #FE6A84;
+    }
+}
+
+.carousel-button:hover {
+    background-color: #f7fafc; /* hover:bg-gray-100 */
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 64rem; /* max-w-4xl */
+    height: 350px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* transition duration-500 ease-in-out */
+}
+
+.carousel-card-wrapper {
+    flex-shrink: 0;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Responsive logic for carousel cards */
+.carousel-card-wrapper {
+    width: 100%; /* Default for mobile (1 card) */
+}
+
+@media (min-width: 768px) { /* md */
+    .carousel-card-wrapper {
+        width: calc(100% / 2); /* 2 cards for md screens */
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .carousel-card-wrapper {
+        width: calc(100% / 3); /* 3 cards for lg screens */
+    }
+    .carousel-button-left:hover{
+        background-color: #ffffff;
+        color: #FE6A84;
+    }
+    .carousel-button-right:hover{
+        background-color: #ffffff;
+        color: #FE6A84;
+    }
+}
+
+.carousel-card-wrapper {
+    width: 100%;
+}

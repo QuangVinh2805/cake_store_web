@@ -1,0 +1,27 @@
+
+{javascript:S6847­"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(éŸÓ§ÿÿÿÿÿ8Ğ„¨„¡3
+ˆjavascript:S1082­"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(éŸÓ§ÿÿÿÿÿ8Ñ„¨„¡3
+_javascript:S6845®";`tabIndex` should only be declared on interactive elements.(«£ª°8Ñ„¨„¡3
+]javascript:S6747®"9Unknown property 'tabindex' found, use 'tabIndex' instead(«£ª°8Ü„¨„¡3
+ujavascript:S6847¿"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(ÀËèU8İ„¨„¡3
+‚javascript:S1082¿"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(ÀËèU8Ş„¨„¡3
+^javascript:S6845¿";`tabIndex` should only be declared on interactive elements.(ÀËèU8Ş„¨„¡3
+\javascript:S6747¿"9Unknown property 'tabindex' found, use 'tabIndex' instead(ÀËèU8Ş„¨„¡3
+ìjavascript:S6848â"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(¯ƒúÁøÿÿÿÿ8ß„¨„¡3
+ˆjavascript:S1082â"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(¯ƒúÁøÿÿÿÿ8ß„¨„¡3
+Gjavascript:S6479ä"Do not use Array index in keys(Ê¹¹óşÿÿÿÿ8Ûù„¡3
+`javascript:S4624ê"7Refactor this code to not use nested template literals.(³¦…ƒúÿÿÿÿ8à„¨„¡3
+ìjavascript:S6848…"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(©ï…ùÿÿÿÿ8à„¨„¡3
+ˆjavascript:S1082…"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(©ï…ùÿÿÿÿ8à„¨„¡3
+djavascript:S6845…";`tabIndex` should only be declared on interactive elements.(©ï…ùÿÿÿÿ8à„¨„¡3
+bjavascript:S6747…"9Unknown property 'tabindex' found, use 'tabIndex' instead(©ï…ùÿÿÿÿ8à„¨„¡3
+ìjavascript:S6848"ÂAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(õ¡ÚÊùÿÿÿÿ8á„¨„¡3
+ˆjavascript:S1082"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(õ¡ÚÊùÿÿÿÿ8á„¨„¡3
+{javascript:S6847–"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(éŸÓ§ÿÿÿÿÿ8á„¨„¡3
+ˆjavascript:S1082–"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(éŸÓ§ÿÿÿÿÿ8á„¨„¡3
+_javascript:S6845—";`tabIndex` should only be declared on interactive elements.(«£ª°8â„¨„¡3
+]javascript:S6747—"9Unknown property 'tabindex' found, use 'tabIndex' instead(«£ª°8â„¨„¡3
+ujavascript:S6847¨"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(ÀËèU8â„¨„¡3
+‚javascript:S1082¨"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(ÀËèU8â„¨„¡3
+^javascript:S6845¨";`tabIndex` should only be declared on interactive elements.(ÀËèU8â„¨„¡3
+\javascript:S6747¨"9Unknown property 'tabindex' found, use 'tabIndex' instead(ÀËèU8ã„¨„¡3

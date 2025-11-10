@@ -1,0 +1,6 @@
+
+λjavascript:S6848"ΒAvoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.(‹βρκωÿÿÿÿ8ψμίΰ3
+‡javascript:S1082"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(‹βρκωÿÿÿÿ8ωμίΰ3
+javascript:S6844"ψThe href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles.(‰¶θ8ωμίΰ3
+΅javascript:S6844"ψThe href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles.(†‘γΑϊÿÿÿÿ8ϊμίΰ3
+javascript:S6844"ψThe href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles.(νƒα‚8ϊμίΰ3
