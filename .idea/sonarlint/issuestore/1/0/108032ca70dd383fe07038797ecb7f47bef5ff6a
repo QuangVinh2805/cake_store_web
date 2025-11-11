@@ -1,13 +1,15 @@
 
-Kjavascript:S6774"('product' is missing in props validation(°ë8¼Ï°úŸ3
-ujavascript:S6847	"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Æœ¢Ã8½Ï°úŸ3
-Vjavascript:S6774
-".'product.image' is missing in props validation(‘£€Àûÿÿÿÿ8½Ï°úŸ3
-Ujavascript:S6774"-'product.name' is missing in props validation(öô “üÿÿÿÿ8½Ï°úŸ3
-Pjavascript:S6774"-'product.tags' is missing in props validation(ò¶¢¢8¾Ï°úŸ3
-Pjavascript:S6774"-'product.tags' is missing in props validation(ò¶¢¢8¾Ï°úŸ3
-Wjavascript:S6774"4'product.tags.length' is missing in props validation(ò¶¢¢8¾Ï°úŸ3
-Pjavascript:S6774"-'product.tags' is missing in props validation(¥Ûàµ8¾Ï°úŸ3
-Tjavascript:S6774"1'product.tags.map' is missing in props validation(¥Ûàµ8¾Ï°úŸ3
-Ojavascript:S6774!"-'product.name' is missing in props validation(Ù†Ü;8¾Ï°úŸ3
-Qjavascript:S6774"".'product.price' is missing in props validation(Ìˆ¥¯8¿Ï°úŸ3
+Kjavascript:S6774"('product' is missing in props validation(°ë8ĞÒüÜ¦3
+\javascript:S6774"4'product.isFavourite' is missing in props validation(à˜²Éúÿÿÿÿ8ĞÒüÜ¦3
+Rjavascript:S6774"/'product.hashId' is missing in props validation(ÜÒ­ğ8™Åİ¦3
+Mjavascript:S6774 "+'product.id' is missing in props validation(ƒ‡¶O8úÔ¾Ş¦3
+ujavascript:S68475"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Æœ¢Ã8™Åİ¦3
+Vjavascript:S67746".'product.image' is missing in props validation(‘£€Àûÿÿÿÿ8šÅİ¦3
+Ujavascript:S67747"-'product.name' is missing in props validation(öô “üÿÿÿÿ8šÅİ¦3
+Pjavascript:S6774H"-'product.tags' is missing in props validation(ò¶¢¢8šÅİ¦3
+Pjavascript:S6774H"-'product.tags' is missing in props validation(ò¶¢¢8šÅİ¦3
+Wjavascript:S6774H"4'product.tags.length' is missing in props validation(ò¶¢¢8šÅİ¦3
+Pjavascript:S6774J"-'product.tags' is missing in props validation(¥Ûàµ8šÅİ¦3
+Tjavascript:S6774J"1'product.tags.map' is missing in props validation(¥Ûàµ8šÅİ¦3
+Ojavascript:S6774S"-'product.name' is missing in props validation(Ù†Ü;8šÅİ¦3
+Qjavascript:S6774T".'product.price' is missing in props validation(Ìˆ¥¯8šÅİ¦3

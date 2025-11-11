@@ -64,6 +64,10 @@
     color: #fff;
 }
 
+.heart-icon-button.favourite .heart-icon {
+    fill:#FE6A84;
+}
+
 /* ----- TAG ----- */
 .product-tags {
     position: absolute;
@@ -228,4 +232,6 @@
         width: 135px;
     }
 }
+
+
 
