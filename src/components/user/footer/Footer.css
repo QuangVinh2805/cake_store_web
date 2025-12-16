@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 .footer {
     background-color: #fe6a84;
     color: #ffffff;
@@ -62,7 +64,7 @@
 /* Logo và mô tả */
 .footer-logo-pink {
     font-size: 55px;
-    font-family: "Freestyle Script"; /* Bạn cần đảm bảo font này được import hoặc thay thế bằng font khác */
+    font-family: 'Great Vibes', cursive;
     line-height: 1;
 }
 .footer-description {

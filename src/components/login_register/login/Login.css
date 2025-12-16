@@ -1,4 +1,6 @@
-/* Toàn bộ khung */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
 .login-container {
     display: flex;
     justify-content: center;
@@ -8,7 +10,7 @@
 }
 .logo-login{
     font-size: 70px;
-    font-family: "Freestyle Script";
+    font-family: 'Great Vibes', cursive;
     color: #fe6a84;
     flex-shrink: 0;
     text-align: center;

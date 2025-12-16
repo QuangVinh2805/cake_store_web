@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 .main-header {
     display: flex;
     align-items: center;
@@ -9,21 +11,21 @@
 
 .logo {
     font-size: 70px;
-    font-family: "Freestyle Script";
+    font-family: 'Great Vibes', cursive;
     color: #fe6a84;
     flex-shrink: 0;
-    margin-left: 100px;
+    margin-left:100px;
     cursor: pointer;
 }
 
 /* Nav bên trái */
 .nav-left {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     flex-grow: 1;
     justify-content: center;
-    margin-right: 250px;
+    margin-right: 350px;
     font-size: 20px;
 }
 
@@ -97,6 +99,11 @@
     .search-bar input {
         max-width: 60px;
     }
+
+    .nav-left{
+        font-size: 18px;
+        margin-right:10px;
+    }
 }
 /* Mobile (width < 768px) */
 @media screen and (max-width: 767px) {
@@ -142,6 +149,16 @@
 
 @media (min-width: 1198px) and (max-width: 1500px) {
     .nav-left{
-
+        font-size: 18px;
+        margin-right: 20px;
+        gap:20px;
     }
+}
+
+@media (min-width: 881px) and (max-width: 915px){
+    .nav-left{
+        font-size: 18px;
+        margin-right: 30px;
+    }
+
 }
