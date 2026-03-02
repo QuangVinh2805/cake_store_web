@@ -18,7 +18,7 @@ export default function LoginForm() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setErrorMessage(""); // reset lỗi cũ
+        setErrorMessage("");
 
         try {
             const res = await fetch("http://localhost:8080/api/users/login", {
@@ -27,38 +27,36 @@ export default function LoginForm() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    phone: phone,
-                    password: password,
+                    phone,
+                    password,
                 }),
             });
 
+            const data = await res.json(); // 👈 LUÔN đọc body
+
             if (!res.ok) {
-                throw new Error("Sai số điện thoại hoặc mật khẩu");
+                // 👇 Ưu tiên message BE trả về
+                throw new Error(data.message || "Đăng nhập thất bại");
             }
 
-            const data = await res.json();
-            console.log("✅ Đăng nhập thành công:", data);
-
-            // Gọi login() trong context
             login(data);
 
-            // Hiển thị toast thành công
-            toast.success("🎉 Đăng nhập thành công!", {
+            toast.success("Đăng nhập thành công!", {
                 position: "top-right",
-                autoClose: 2000,
             });
 
-            // Chuyển trang sau 1 chút để user thấy toast
             setTimeout(() => {
-                if (data.role === "ADMIN") navigate("/admin");
+                if (data.role === "ADMIN") navigate("/admin/users");
                 else navigate("/");
-            }, 1500);
+            }, 2000);
 
         } catch (error) {
-            console.error("❌ Lỗi đăng nhập:", error);
-            setErrorMessage(error.message);
+            console.error("Lỗi đăng nhập:", error);
+            setErrorMessage(error.message); // 👈 message từ BE
+            toast.error(error.message);
         }
     };
+
 
     return (
         <div className="login-container">
@@ -93,6 +91,15 @@ export default function LoginForm() {
                 <div className="register-link">
                     Chưa có tài khoản? <a href="/register">Đăng ký</a>
                 </div>
+                <div className="register-link">
+                    <span
+                        style={{ cursor: "pointer" }}
+                        onClick={() => navigate("/forgot-password")}
+                    >
+                        Quên mật khẩu?
+                    </span>
+                </div>
+
 
                 <div className="deco">
                     <img className="deco1" src="./logologin1.png" alt="deco1" />

@@ -51,17 +51,8 @@ const Footer = () => {
                 {/* Cột 4: Liên hệ */}
                 <div>
                     <h4 className="footer-heading">Cơ sở</h4>
-                    <p className="contact-info">Cs1 : 123 Đường Bánh Ngọt, Quận 1, TP.HCM</p>
-                    <p className="contact-info">Cs2 : 123 Đường Bánh Ngọt, Thanh Trì, HN</p>
-                    <img
-                        src="https://placehold.co/150x80/FFC0CB/FF1493?text=Map+Placeholder"
-                        alt="Bản đồ cửa hàng"
-                        className="footer-map"
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = "https://placehold.co/150x80/E0E0E0/333333?text=Map+Error";
-                        }}
-                    />
+                    <p className="contact-info">Cs1 : 123 Đường Phạm Văn Đồng,Hà Nội</p>
+                    <p className="contact-info">Cs2 : 123 Đường Xuân Đỉnh,Hà Nội</p>
                 </div>
             </div>
 

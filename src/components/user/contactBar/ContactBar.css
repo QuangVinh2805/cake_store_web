@@ -26,7 +26,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 170px;
+    width: 200px;
     z-index: 10;
     opacity: 0;
     transform: translateY(-5px);
@@ -48,7 +48,7 @@
 }
 
 
-.dropdown-item {
+.dropdown-item-user {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -57,7 +57,7 @@
     transition: background 0.2s;
 }
 
-.dropdown-item:hover {
+.dropdown-item-user:hover {
     background: #f7f7f7;
 }
 
@@ -217,7 +217,7 @@
         height: 22px;
     }
 }
-@media(max-width: 416px){
+@media(max-width: 461px){
     .contact-left{
         display: flex;
         align-items: center;

@@ -48,7 +48,7 @@ const ContactBar = () => {
     };
 
     const handleOrder = () => {
-        navigate(`/orders`);
+        navigate(`/my-orders`);
         setShowDropdown(false);
         setIsVisible(false);
     };
@@ -93,7 +93,9 @@ const ContactBar = () => {
             </div>
 
             <div className="contact-right">
-                <button className="order-btn">Đặt hàng</button>
+                <button className="order-btn" onClick={() => navigate("/product")} >
+                    Đặt hàng ngay
+                </button>
                 <FiShoppingCart className="cart-icon" onClick={goToCart} />
 
                 <div className="user-section" onClick={toggleDropdown}>
@@ -110,19 +112,19 @@ const ContactBar = () => {
 
                     {isVisible && (
                         <div className={`user-dropdown ${showDropdown ? 'show' : 'hide'}`}>
-                            <div className="dropdown-item" onClick={handleProfile}>
+                            <div className="dropdown-item-user" onClick={handleProfile}>
                                 <FiUser className="dropdown-icon"/>
                                 <span>Thông tin cá nhân</span>
                             </div>
-                            <div className="dropdown-item" onClick={handleChangePassword}>
+                            <div className="dropdown-item-user" onClick={handleChangePassword}>
                                 <FiKey className="dropdown-icon"/>
                                 <span>Thay đổi mật khẩu</span>
                             </div>
-                            <div className="dropdown-item" onClick={handleOrder}>
+                            <div className="dropdown-item-user" onClick={handleOrder}>
                                 <FiShoppingBag className="dropdown-icon"/>
                                 <span>Đơn hàng của bạn</span>
                             </div>
-                            <div className="dropdown-item" onClick={handleLogout}>
+                            <div className="dropdown-item-user" onClick={handleLogout}>
                                 <FiLogOut className="dropdown-icon"/>
                                 <span>Đăng xuất</span>
                             </div>

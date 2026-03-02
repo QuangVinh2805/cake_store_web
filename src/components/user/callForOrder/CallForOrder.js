@@ -1,8 +1,11 @@
 // src/components/CallForOrder.js
 import React from 'react';
-import './CallForOrder.css'; // Import the CSS file for this component
+import './CallForOrder.css';
+import {useNavigate} from "react-router-dom"; // Import the CSS file for this component
 
 const CallForOrder = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="cta-section">
             <div className="container-cfo cta-content">
@@ -27,8 +30,8 @@ const CallForOrder = () => {
                     <p className="cta-description">
                         Bạn có một ý tưởng độc đáo cho chiếc bánh? Hãy để chúng tôi biến giấc mơ ngọt ngào của bạn thành hiện thực. Chúng tôi nhận đặt làm bánh theo yêu cầu riêng, từ hương vị đến kiểu dáng.
                     </p>
-                    <button className="cta-button">
-                        Tư vấn & Đặt bánh
+                    <button className="cta-button" onClick={() => navigate("/product")}>
+                        Đặt bánh ngay
                     </button>
                 </div>
             </div>

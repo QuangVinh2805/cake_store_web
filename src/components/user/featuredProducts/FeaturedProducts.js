@@ -8,44 +8,54 @@ import axios from 'axios';
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [activeTab, setActiveTab] = useState(0); // 0: Tất cả
+    // const [activeTab, setActiveTab] = useState(0); // 0: Tất cả
     const navigate = useNavigate();
 
     // ✅ Gọi API lấy sản phẩm nổi bật
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get('http://localhost:8080/api/products/getProductByTag', {
-                    params: { tagId: 1 }, // tag "Nổi bật"
-                });
-                setProducts(res.data || []);
+                const res = await axios.get(
+                    'http://localhost:8080/api/products/getProductByTagOne',
+                    {
+                        params: {
+                            tagId: 1,   // tag "Nổi bật"
+                            page: 0,
+                            size: 8    // số item cho slider
+                        }
+                    }
+                );
+
+                setProducts(res.data.content || []);
             } catch (err) {
-                console.error('Lỗi khi gọi API sản phẩm:', err);
+                console.error('Lỗi khi gọi API sản phẩm nổi bật:', err);
             }
         };
+
         fetchProducts();
     }, []);
 
+
     // ✅ Gọi API lấy danh mục
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const res = await axios.get('http://localhost:8080/api/categories/getAll');
-                setCategories(res.data || []);
-            } catch (err) {
-                console.error('Lỗi khi gọi API categories:', err);
-            }
-        };
-        fetchCategories();
-    }, []);
+    // useEffect(() => {
+    //     const fetchCategories = async () => {
+    //         try {
+    //             const res = await axios.get('http://localhost:8080/api/categories/getAll');
+    //             setCategories(res.data || []);
+    //         } catch (err) {
+    //             console.error('Lỗi khi gọi API categories:', err);
+    //         }
+    //     };
+    //     fetchCategories();
+    // }, []);
 
     const goToProduct = () => navigate('/product');
 
     // ✅ Lọc sản phẩm theo danh mục
-    const getActiveProducts = () => {
-        if (activeTab === 0) return products; // tất cả
-        return products.filter(p => p.categoryId === activeTab);
-    };
+    // const getActiveProducts = () => {
+    //     if (activeTab === 0) return products; // tất cả
+    //     return products.filter(p => p.categoryId === activeTab);
+    // };
 
     return (
         <section className="featured-products-section">
@@ -53,28 +63,30 @@ const FeaturedProducts = () => {
                 <h2 className="section-title-product">Sản phẩm nổi bật</h2>
 
                 {/* ✅ Tabs render động từ API */}
-                <div className="tabs-container">
-                    <button
-                        className={`featured-button ${activeTab === 0 ? 'active' : ''}`}
-                        onClick={() => setActiveTab(0)}
-                    >
-                        Tất cả
-                    </button>
-                    {categories.map(cate => (
-                        <button
-                            key={cate.id}
-                            className={`featured-button ${activeTab === cate.id ? 'active' : ''}`}
-                            onClick={() => setActiveTab(cate.id)}
-                        >
-                            {cate.name}
-                        </button>
-                    ))}
-                </div>
+                {/*<div className="tabs-container">*/}
+                {/*    /!* TẤT CẢ *!/*/}
+                {/*    <button*/}
+                {/*        className="featured-button"*/}
+                {/*        onClick={() => navigate("/product")}*/}
+                {/*    >*/}
+                {/*        Tất cả*/}
+                {/*    </button>*/}
 
-                {/* ✅ Hiển thị danh sách sản phẩm */}
+                {/*    /!* CATEGORY *!/*/}
+                {/*    {categories.map(cate => (*/}
+                {/*        <button*/}
+                {/*            key={cate.id}*/}
+                {/*            className="featured-button"*/}
+                {/*            onClick={() => navigate(`/product/category/${cate.id}`)}*/}
+                {/*        >*/}
+                {/*            {cate.name}*/}
+                {/*        </button>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
+
                 <div className="products-grid">
-                    {getActiveProducts().length > 0 ? (
-                        getActiveProducts().map((product) => (
+                    {products.length > 0 ? (
+                        products.map((product) => (
                             <ProductCard
                                 key={product.productHashId}
                                 product={{
@@ -82,14 +94,15 @@ const FeaturedProducts = () => {
                                     name: product.productName,
                                     price: product.price.toLocaleString() + 'đ',
                                     image: `http://localhost:8080${product.image}`,
-                                    tags: [product.tag],
+                                    tags: product.tags || [],
                                 }}
                             />
                         ))
                     ) : (
-                        <p>Không có sản phẩm cho danh mục này.</p>
+                        <p>Không có sản phẩm.</p>
                     )}
                 </div>
+
 
                 <div className="view-all-button-container">
                     <button className="view-all-button" onClick={goToProduct}>

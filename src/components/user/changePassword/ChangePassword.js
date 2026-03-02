@@ -26,24 +26,21 @@ export default function ChangePassword() {
                 `http://localhost:8080/api/users/change-password?token=${token}`,
                 {
                     method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        oldPassword: oldPassword,
-                        newPassword: newPassword,
+                        oldPassword,
+                        newPassword,
                     }),
                 }
             );
 
-            let data;
+            const data = await res.json();
 
             if (!res.ok) {
-                const message = data?.message || "Đổi mật khẩu thất bại!";
-                throw new Error(message);
+                throw new Error(data.message || "Đổi mật khẩu thất bại!");
             }
 
-            toast.success(data || "Đổi mật khẩu thành công!", {
+            toast.success(data.message || "Đổi mật khẩu thành công!", {
                 position: "top-right",
                 autoClose: 2000,
             });

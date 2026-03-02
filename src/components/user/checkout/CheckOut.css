@@ -126,3 +126,15 @@
         text-align: center;
     }
 }
+
+
+.payment-method {
+    margin-top: 20px;
+}
+
+.payment-method label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+

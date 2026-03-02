@@ -16,6 +16,32 @@ export default function Profile() {
     const [avatar, setAvatar] = useState(null);
     const [preview, setPreview] = useState(null);
 
+    const validateForm = () => {
+        if (!form.name.trim()) {
+            return "Họ và tên không được để trống";
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(form.email)) {
+            return "Email không hợp lệ";
+        }
+
+        if (form.phone && !/^[0-9]{9,11}$/.test(form.phone)) {
+            return "Số điện thoại không hợp lệ";
+        }
+
+        if (form.birthday) {
+            const birthday = new Date(form.birthday);
+            const today = new Date();
+            if (birthday > today) {
+                return "Ngày sinh không hợp lệ";
+            }
+        }
+
+        return null;
+    };
+
+
     useEffect(() => {
         if (user) {
             setForm({
@@ -51,6 +77,14 @@ export default function Profile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // ✅ FE VALIDATE
+        const error = validateForm();
+        if (error) {
+            toast.error(error);
+            return;
+        }
+
         const token = localStorage.getItem("token");
         if (!token) {
             toast.error("Vui lòng đăng nhập lại!");
@@ -68,23 +102,27 @@ export default function Profile() {
                 body: formData,
             });
 
-            if (!res.ok) throw new Error("Cập nhật thất bại");
+            const result = await res.json();
 
-            const updatedUser = await res.json();
+            // ❌ BE TRẢ LỖI
+            if (!res.ok) {
+                toast.error("Cập nhật thất bại.Lý do " + result.message || "Cập nhật thất bại!",{autoClose: 10000});
+                return;
+            }
 
-            toast.success("Cập nhật thành công!");
+            // ✅ THÀNH CÔNG
+            toast.success("Cập nhật thành công!",{autoClose: 10000});
 
-            // ✅ Cập nhật vào localStorage + context để render lại ngay
-            localStorage.setItem("userInfo", JSON.stringify(updatedUser));
-            setUser(updatedUser); // 👈 cập nhật AuthContext để UI tự refresh
-            localStorage.setItem("avatar", updatedUser.avatar || "");
+            localStorage.setItem("userInfo", JSON.stringify(result));
+            setUser(result);
+            localStorage.setItem("avatar", result.avatar || "");
 
             setIsEditing(false);
-
             window.scrollTo({ top: 0, behavior: "smooth" });
+
         } catch (err) {
             console.error(err);
-            toast.error("Không thể cập nhật thông tin!");
+            toast.error("Không thể kết nối tới máy chủ!");
         }
     };
 

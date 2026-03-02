@@ -40,6 +40,8 @@ export const AuthProvider = ({ children }) => {
         fetchUser();
     }, [token]);
 
+
+
     // Đăng nhập
     const login = (data) => {
         localStorage.setItem("token", data.token);

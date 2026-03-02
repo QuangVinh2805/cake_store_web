@@ -27,9 +27,11 @@
 }
 
 .thumbnail-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 80px); /* 👈 tối đa 5 / dòng */
     gap: 12px;
     margin-top: 16px;
+    justify-content: center;
 }
 
 .thumbnail {
@@ -45,6 +47,7 @@
 .thumbnail.active {
     border-color: #fe6a84;
 }
+
 
 .info-section {
     flex: 1;
@@ -482,5 +485,170 @@
         width: 75%;
     }
 }
+/* ================= REVIEW SECTION ================= */
 
+.review-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
 
+.review-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* ===== SUMMARY ===== */
+.review-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.review-score {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.review-count {
+    color: #777;
+}
+
+/* ================= REVIEW FORM ================= */
+
+.review-form {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+}
+
+.review-form h3 {
+    margin-bottom: 15px;
+}
+
+/* DROPDOWN */
+.review-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* RATE */
+.review-form .MuiRating-root {
+    margin-bottom: 12px;
+}
+
+/* TEXTAREA */
+.review-form textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    resize: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+/* FILE INPUT (CUSTOM LOOK) */
+.review-form input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+.review-form button {
+    background: #fe6a84;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.review-form button:hover {
+    opacity: 0.9;
+}
+
+/* ================= REVIEW LIST ================= */
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== REVIEW ITEM ===== */
+.review-item {
+    display: flex;              /* 🔥 FIX */
+    flex-direction: column;     /* 🔥 FIX */
+    background: #fff;
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ===== HEADER ===== */
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* AVATAR */
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+/* USER INFO */
+.review-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-username {
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ===== COMMENT ===== */
+.review-comment {
+    line-height: 1.6;
+    margin-left:8%;
+}
+
+/* ===== IMAGE ===== */
+.review-image {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-left:8%;
+}
+
+/* ===== DATE ===== */
+.review-date {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #999;
+    margin-left:auto;
+}

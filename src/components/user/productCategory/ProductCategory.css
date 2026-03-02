@@ -1,0 +1,77 @@
+.product-category-page {
+    padding: 30px 50px;
+    background-color: #fff;
+}
+
+.category-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+    margin-left:10%;
+}
+
+.category-title span {
+    color: #FE6A84;
+}
+
+/*.category-loading,*/
+/*.category-empty {*/
+/*    font-size: 16px;*/
+/*    color: #888;*/
+/*    text-align: center;*/
+/*    margin-top: 40px;*/
+/*}*/
+
+/* GRID dùng chung với product card */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Responsive giống trang sản phẩm */
+@media (max-width: 1354px) {
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 1005px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .product-category-page {
+        padding: 20px;
+    }
+}
+
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.pagination button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #fe6a84;
+    background: #fff;
+    color: #fe6a84;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+

@@ -1,0 +1,167 @@
+.order-detail-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.order-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #FE6A84;
+    font-size: 30px;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.order-table th,
+.order-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.order-total {
+    text-align: right;
+    font-weight: 600;
+}
+
+.order-total span {
+    color: #FE6A84;
+}
+
+/* STATUS */
+.status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.preparing {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.shipping {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.cancel-order {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.empty {
+    text-align: center;
+    color: #777;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Sửa lại CSS cho Modal để đảm bảo tính minh bạch */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Đừng để quá nhiều số 9 */
+}
+
+.modal-content-order {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    /* Bỏ position relative/z-index không cần thiết ở đây */
+    z-index: 10000;
+}
+
+.order-item-img-product {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;      /* CẮT ảnh cho vừa khung */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+}
+
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around; /* Chia đều khoảng cách */
+}
+
+.btn-secondary, .btn-cancel-order {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-cancel-order {
+    background: #FE6A84; /* Màu chủ đạo của bạn */
+    color: white;
+    z-index: 10001;
+}
+
+.btn-cancel-order:hover {
+    background: #e53935;
+}
+
+/* Quan trọng: Trạng thái disabled */
+.btn-cancel-order:disabled {
+    background: #fab1bc !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+}

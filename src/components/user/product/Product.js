@@ -16,9 +16,12 @@ export default function Product() {
     const [currentResults, setCurrentResults] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [showFilterPopup, setShowFilterPopup] = useState(false);
+    const [page, setPage] = useState(0);
+    const [size] = useState(12);
+    const [totalPages, setTotalPages] = useState(0);
 
 
-    // ------------------- Helpers -------------------
+
     const parsePrice = (price) => {
         if (price == null) return 0;
         if (typeof price === 'number') return price;
@@ -50,22 +53,43 @@ export default function Product() {
 
     const normalizeProducts = (data) =>
         data.map(p => ({
-            ...p,
-            name: p.productName || p.name,
+            productHashId: p.productHashId,
+            productName: p.productName,
             image: p.image,
             price: p.price,
-            categoryId: p.categoryId ?? p.category?.id ?? p.category_id,
-            tag: p.tag || p.tags || p.tagName
+            categoryId: p.categoryId,
+            tags: p.tags || [],
+            status: p.status
         }));
 
-    // ------------------- React Query -------------------
-    const {data: products = []} = useQuery({
-        queryKey: ['products'],
-        queryFn: () => fetch('http://localhost:8080/api/products').then(res => res.json()),
-        staleTime: 1000 * 60, // 1 phút
-        refetchInterval: 1000 * 60 * 5, // 5 phút
-        refetchOnWindowFocus: true
+
+    const { data: productPage } = useQuery({
+        queryKey: ['products', page, selectedCate, selectedTag[0] || ''],
+        queryFn: () => {
+            const params = new URLSearchParams({
+                page,
+                size
+            });
+
+            if (selectedCate) params.append('categoryId', selectedCate);
+            if (selectedTag.length > 0) params.append('tagId', selectedTag[0]);
+
+            let url = 'http://localhost:8080/api/products/getAllProductByStatus';
+
+            if (selectedCate && selectedTag.length > 0) {
+                url = 'http://localhost:8080/api/products/getProductByCategoryAndTag';
+            } else if (selectedCate) {
+                url = 'http://localhost:8080/api/products/getProductByCategoryId';
+            } else if (selectedTag.length > 0) {
+                url = 'http://localhost:8080/api/products/getProductByTag';
+            }
+
+            return fetch(`${url}?${params.toString()}`).then(res => res.json());
+        },
+        keepPreviousData: true
     });
+
+
 
     const {data: categories = []} = useQuery({
         queryKey: ['categories'],
@@ -79,91 +103,42 @@ export default function Product() {
         staleTime: 1000 * 60 * 60
     });
 
-    // ------------------- Effect price & base -------------------
     useEffect(() => {
-        if (products.length) {
-            const normalized = normalizeProducts(products);
+        if (productPage?.content) {
+            const normalized = normalizeProducts(productPage.content);
             setCurrentResults(normalized);
-            const maxFromApi = Math.max(...normalized.map(p => parsePrice(p.price)));
+            setFilteredProducts(normalized);
+            setTotalPages(productPage.totalPages || 1);
+
+            const maxFromApi = Math.max(
+                ...normalized.map(p => parsePrice(p.price)),
+                0
+            );
             setMaxPriceLimit(maxFromApi);
             setMaxPrice(maxFromApi);
-            applyPriceFilter(normalized);
         }
-    }, [products]);
+    }, [productPage]);
+
 
     useEffect(() => {
         applyPriceFilter(currentResults);
     }, [maxPrice, currentResults]);
 
-    // ------------------- Filter handlers -------------------
-    const fetchFilteredProducts = async (categoryId, tagId) => {
-        try {
-            const query = new URLSearchParams();
-            if (categoryId) query.append('categoryId', categoryId);
-            if (tagId) query.append('tagId', tagId);
 
-            const url = `http://localhost:8080/api/products/getProductByCategoryAndTag?${query.toString()}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            const normalized = normalizeProducts(data);
-
-            setCurrentResults(normalized);
-            applyPriceFilter(normalized);
-        } catch (err) {
-            console.error(err);
-        }
-    };
 
     const handleCategoryClick = async (categoryId) => {
         setSelectedCate(categoryId);
-        if (selectedTag.length > 0) {
-            await fetchFilteredProducts(categoryId, selectedTag[0]);
-            return;
-        }
-
-        const url = categoryId
-            ? `http://localhost:8080/api/products/getProductByCategoryId?categoryId=${categoryId}`
-            : `http://localhost:8080/api/products`;
-
-        const res = await fetch(url);
-        const data = await res.json();
-        const normalized = normalizeProducts(data);
-
-        setCurrentResults(normalized);
-        applyPriceFilter(normalized);
+        setPage(0);
     };
 
     const handleTagChange = async (tagId) => {
-        const newSelectedTag = selectedTag.includes(tagId) ? [] : [tagId];
-        setSelectedTag(newSelectedTag);
-
-        if (selectedCate && newSelectedTag.length > 0) {
-            await fetchFilteredProducts(selectedCate, tagId);
-            return;
-        }
-
-        if (newSelectedTag.length > 0) {
-            const res = await fetch(`http://localhost:8080/api/products/getProductByTag?tagId=${tagId}`);
-            const data = await res.json();
-            const normalized = normalizeProducts(data);
-
-            setCurrentResults(normalized);
-            applyPriceFilter(normalized);
-            return;
-        }
-
-        if (selectedCate) {
-            await handleCategoryClick(selectedCate);
-        } else {
-            const res = await fetch('http://localhost:8080/api/products');
-            const data = await res.json();
-            const normalized = normalizeProducts(data);
-            setCurrentResults(normalized);
-            applyPriceFilter(normalized);
-        }
+        const newTag = selectedTag.includes(tagId) ? [] : [tagId];
+        setSelectedTag(newTag);
+        setPage(0);
     };
 
-    // ------------------- Render -------------------
+
+
     return (
         <div className="product-container">
             <Header/>
@@ -173,15 +148,12 @@ export default function Product() {
                     <h3 className="all-product"
                         tabindex="0"
                         style={{cursor: 'pointer'}}
-                        onClick={async () => {
+                        onClick={() => {
                             setSelectedCate('');
                             setSelectedTag([]);
-                            const res = await fetch('http://localhost:8080/api/products');
-                            const data = await res.json();
-                            const normalized = normalizeProducts(data);
-                            setCurrentResults(normalized);
-                            applyPriceFilter(normalized);
+                            setPage(0);
                         }}
+
                     >
                         Tất cả sản phẩm
                     </h3>
@@ -234,30 +206,42 @@ export default function Product() {
                                         src={`${item.image ? `http://localhost:8080${item.image}` : ''}`}
                                         alt={item.productName || item.name}
                                     />
-                                    <button className="product-icon-button-heart">
-                                        <Heart className="icon-svg-heart"/>
-                                    </button>
                                 </div>
 
-                                {item.tag && (
+                                {item.tags.length > 0 && (
                                     <div className="tag-container">
-                                        <span className="tag">{item.tag}</span>
+                                        {item.tags.map((t, i) => (
+                                            <span className="tag" key={i}>{t}</span>
+                                        ))}
                                     </div>
                                 )}
                                 <h4 className="product-product-name">{item.productName || item.name}</h4>
                                 <p className="product-product-price">{parsePrice(item.price).toLocaleString()}₫</p>
-                                {/*<button className="product-icon-button" style={{}}>*/}
-                                {/*    <Heart className="icon-svg"/>*/}
-                                {/*</button>*/}
-                                <button>Thêm vào giỏ hàng</button>
+                                <button>Xem chi tiết</button>
                             </div>
                         )) : (
                             <p className="notifi-no-product">Không có sản phẩm phù hợp.</p>
                         )}
                     </div>
+                    <div className="pagination">
+                        <button
+                            disabled={page === 0}
+                            onClick={() => setPage(prev => prev - 1)}
+                        >
+                            Trước
+                        </button>
+
+                        <span>Trang {page + 1} / {totalPages}</span>
+
+                        <button
+                            disabled={page + 1 >= totalPages}
+                            onClick={() => setPage(prev => prev + 1)}
+                        >
+                            Sau
+                        </button>
+                    </div>
                 </div>
             </div>
-            {/* Nút tròn mở bộ lọc (chỉ hiện mobile) */}
             <div tabindex="0"
                 className="filter-fab"
                 onClick={() => setShowFilterPopup(!showFilterPopup)}
@@ -265,7 +249,6 @@ export default function Product() {
                 <Cake className="product-cake" />
             </div>
 
-            {/* Popup bộ lọc mobile */}
             {showFilterPopup && (
                 <div className="filter-popup">
     <span
@@ -281,11 +264,7 @@ export default function Product() {
                         onClick={async () => {
                             setSelectedCate('');
                             setSelectedTag([]);
-                            const res = await fetch('http://localhost:8080/api/products');
-                            const data = await res.json();
-                            const normalized = normalizeProducts(data);
-                            setCurrentResults(normalized);
-                            applyPriceFilter(normalized);
+                            setPage(0);
                         }}
                     >
                         Tất cả sản phẩm

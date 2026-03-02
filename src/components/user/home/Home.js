@@ -7,6 +7,7 @@ import QualityAssurance from '../qualityAssurance/QualityAssurance';
 import CallToAction from '../callForOrder/CallForOrder';
 import Testimonials from '../testimonials/Testimonials';
 import Footer from '../footer/Footer';
+import ChatBubble from '../chatBox/ChatBubble';
 
 
 export default function Home() {
@@ -21,6 +22,8 @@ export default function Home() {
                 <Testimonials />
             </main>
             <Footer />
+
+            <ChatBubble />
         </div>
     );
 }
